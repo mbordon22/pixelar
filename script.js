@@ -2,15 +2,20 @@
 2. Al hacer click en un cuadro que cambie de color (elegir alguno)
 3. Armar la grilla con tamaños variables, de acuerdo a un input donde diga la cantidad de columnas. */
 
-document.addEventListener("DOMContentLoaded", function(){
+const container = document.getElementById("container");
+const colorCaja = document.getElementById("color-input");
+const columnas = document.getElementById("columnas-input");
+const filas = document.getElementById("filas-input");
+const botonGenerar = document.getElementById("boton-generar");
 
-    const columnas = 20;
-    const filas = 20;
-    const container = document.getElementById("container");
-    const colorCaja = document.getElementById("color-input");
+botonGenerar.addEventListener("click", function(){
 
-    for(let i = 0; i < columnas; i++){
-        for(let j = 0; j < filas; j++){
+    container.innerHTML = "";
+
+    container.style.gridTemplateColumns = `repeat(${columnas.value}, 1fr)`; //Genera la cantidad de columnas de la grilla
+
+    for(let i = 0; i < columnas.value; i++){
+        for(let j = 0; j < filas.value; j++){
 
             const caja = document.createElement("div"); //Creamos los div
             caja.classList.add("caja"); //Le añado la clase
@@ -18,20 +23,13 @@ document.addEventListener("DOMContentLoaded", function(){
             container.appendChild(caja); //Guardamos en el container
 
             caja.addEventListener("click", function(){
-                
-                caja.style.backgroundColor = colorCaja.value;
-
-                /* if(caja.style.backgroundColor === "#FFFFFF"){
-                    caja.style.backgroundColor = colorCaja.value;
-                }
-                else{
-                    caja.style.backgroundColor = "#FFFFFF";
-                } */
+                caja.style.backgroundColor = colorCaja.value;   //Añade el color
             })
             
             caja.addEventListener("dblclick", function(){
-                caja.style.backgroundColor = "#FFFFFF";
+                caja.style.backgroundColor = "#FFFFFF";     //Quita el color
             })
+            
         }
     }
     
