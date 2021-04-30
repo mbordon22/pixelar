@@ -1,0 +1,22 @@
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container {
+  margin-top: 50px;
+  display: inline-grid;
+  grid-template-columns: repeat(20, 1fr);
+}
+
+.caja{
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.tomato{
+  background-color: tomato;
+}
