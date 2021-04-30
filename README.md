@@ -1,0 +1,2 @@
+# pixelar
+Ejercicio grupal ComIt
