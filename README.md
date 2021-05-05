@@ -1,4 +1,4 @@
-## Consigna Pixel-art
+## Consigna Pixel-art  
 
 Sobre la base de este proyecto que vimos, sumar todo lo que puedan de estas propuestas (en todos los casos, la idea es que agreguen una cabecera con las herramientas que propongo, y abajo se arme la cuadrícula):
 

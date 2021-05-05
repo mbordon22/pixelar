@@ -2,6 +2,7 @@
 2. Al hacer click en un cuadro que cambie de color (elegir alguno)
 3. Armar la grilla con tamaños variables, de acuerdo a un input donde diga la cantidad de columnas. */
 
+/* Guardamos en variables los objetos de html */
 const container = document.getElementById("container");
 const colorCaja = document.getElementById("color-input");
 const colorFondo = document.getElementById("color-fondo");
@@ -9,12 +10,13 @@ const columnas = document.getElementById("columnas-input");
 const filas = document.getElementById("filas-input");
 const botonGenerar = document.getElementById("boton-generar");
 const botonLapiz = document.getElementById("boton-lapiz");
-botonLapiz.classList.add("botonLapiz");
 const botonGoma = document.getElementById("boton-goma");
-botonGoma.classList.add("botonGoma");
 const borde = document.getElementById("borde");
 const tamanio = document.getElementById("tamanio");
 let bandera = true;
+
+/* Añadimos la clase para que el lapiz aparezca seleccionado bien carga la pagina */
+botonLapiz.classList.add("seleccionado");
 
 
 botonGenerar.addEventListener("click", function () {
@@ -29,6 +31,8 @@ botonGenerar.addEventListener("click", function () {
 
             const caja = document.createElement("div"); //Creamos los div
             caja.classList.add("caja"); //Le añado la clase
+            caja.style.width = tamanio.value + "px";
+            caja.style.height = tamanio.value + "px";
             caja.style.backgroundColor = colorFondo.value;
 
             container.appendChild(caja); //Guardamos en el container
